@@ -22,6 +22,7 @@
 #include "system_stm32f4xx.h"
 #include "led.h"
 #include "lis3dsh.h"
+#include "uart.h"
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
 #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -33,6 +34,9 @@ int main(void)
 	int ret;
 	LIS_Data val;
 	SystemInit();
+	UartInit(BAUD_9600);
+  UartPuts("lis3dsh Accel Demo!");
+
 	LIS_Init();
 	DelayMs(1000);
 	LedInit(LED_GREEN);
@@ -46,6 +50,8 @@ int main(void)
 		if(ret){
 			val = LIS_GetData();
 			sprintf(str,"X = %d, Y = %d ",val.x,val.y);
+			UartPuts(str);
+			DelayMs(1000);
 			sprintf(str,"Z = %d",val.z);
 			if(val.x > 1000)
 				LedOn(LED_RED);

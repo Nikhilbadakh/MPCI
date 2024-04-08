@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := DAY9_ASSIGNEMENT_QUE2
+BUILD_ARTIFACT_NAME := day9assing2 axis
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-DAY9_ASSIGNEMENT_QUE2.elf \
+day9assing2\ axis.elf \
 
 MAP_FILES += \
-DAY9_ASSIGNEMENT_QUE2.map \
+day9assing2\ axis.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-DAY9_ASSIGNEMENT_QUE2.list \
+day9assing2\ axis.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: DAY9_ASSIGNEMENT_QUE2.elf secondary-outputs
+main-build: day9assing2\ axis.elf secondary-outputs
 
 # Tool invocations
-DAY9_ASSIGNEMENT_QUE2.elf DAY9_ASSIGNEMENT_QUE2.map: $(OBJS) $(USER_OBJS) /home/ashay/STM32CubeIDE/workspace_1.15.0/DAY9_ASSIGNEMENT_QUE2/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DAY9_ASSIGNEMENT_QUE2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ashay/STM32CubeIDE/workspace_1.15.0/DAY9_ASSIGNEMENT_QUE2/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DAY9_ASSIGNEMENT_QUE2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+day9assing2\ axis.elf day9assing2\ axis.map: $(OBJS) $(USER_OBJS) /home/nikhil/Desktop/mcpi_assingments/day9assing2\ axis/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "day9assing2 axis.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/nikhil/Desktop/mcpi_assingments/day9assing2 axis/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="day9assing2 axis.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,14 +69,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-DAY9_ASSIGNEMENT_QUE2.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "DAY9_ASSIGNEMENT_QUE2.list"
+day9assing2\ axis.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "day9assing2 axis.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) DAY9_ASSIGNEMENT_QUE2.elf DAY9_ASSIGNEMENT_QUE2.list DAY9_ASSIGNEMENT_QUE2.map default.size.stdout
+	-$(RM) day9assing2\ axis.elf day9assing2\ axis.list day9assing2\ axis.map day9assing2\\ axis.elf default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
